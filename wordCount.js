@@ -19,6 +19,7 @@ function sortWordsByFrequency(object) {
 }
 
 function appendCountsToFile(array, filePath) {
+  //using forEach and fs.appendFileSync to iterate over the array of [key: value] pairs and append them with ordering intact to the file with pathname of filePath
   array.forEach((word) => {
     const wordCount = `${word[0]} ${word[1]}`;
     fs.appendFileSync(filePath, '\n\n' + wordCount, (error) => {
@@ -28,6 +29,7 @@ function appendCountsToFile(array, filePath) {
 }
 
 function countWordsAndAppendTotals(filePath) {
+  //use fs to read text file with pathname of filePath and split on spaces returning an array
   const text = fs.readFileSync('./text-to-count.txt', 'utf-8');
   const wordArr = text.split(' ');
 
@@ -35,3 +37,6 @@ function countWordsAndAppendTotals(filePath) {
   const sortedWords = sortWordsByFrequency(countObj);
   appendCountsToFile(sortedWords, filePath);
 }
+
+// uncomment the following line to run function with text file path as argument
+// countWordsAndAppendTotals(<filePath>);
