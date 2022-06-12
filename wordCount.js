@@ -1,0 +1,1 @@
+//Assuming that all spaces are separating words without punctuation or non letter characters (except for apostrophes/contractions). Assuming same formatting as example in email including descending sort, lowercase, and line spacing. Assuming this function doesn't need a guard against running repeatedly which starts to grow with numbers as keys as well. Using vanilla javascript.
