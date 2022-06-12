@@ -13,4 +13,12 @@ function countWords(array) {
   console.log(wordsCount);
   return wordsCount;
 }
-countWords(wordArr);
+
+function sortWordsByFrequency(object) {
+  //using forEach and fs.appendFileSync to iterate over the array of [key: value] pairs and append them with ordering intact to the file with pathname of filePath
+  const sortedWords = Object.entries(object).sort(([, a], [, b]) => b - a);
+  console.log('sortedWords :>> ', sortedWords);
+  return sortedWords;
+}
+const countObj = countWords(wordArr);
+sortWordsByFrequency(countObj);
