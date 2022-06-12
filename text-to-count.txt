@@ -1,0 +1,1 @@
+The program should print a list of the words in the text file and the frequency in which they occur
